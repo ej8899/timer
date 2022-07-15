@@ -1,8 +1,11 @@
 # basic timer
 ### LHL - timer challenge
+Reference: https://flex-web.compass.lighthouselabs.ca/workbooks/flex-m01w4/activities/390?journey_step=32&workbook=7
 
 usage is
+```
 node timer1.js x y z...
+```
 
 Where x y z is a list (spece separated) of numbers in seconds for the timer.
 
