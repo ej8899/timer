@@ -32,13 +32,12 @@ if (parsedData.length < 1) {
 // CREATE & START TIMERS
 let timerInstance = [];
 
-// display timer start
+// display timer start & show number of timers that are running
 let modifier = ' is';
-console.log(parsedData.length);
 if (parsedData.length > 1) {
   modifier = 's are';
 }
-console.log('Timer' + modifier + ' running...');
+console.log(parsedData.length + ' timer' + modifier + ' running...');
 
 for (let x = 0; x < parsedData.length; x++) {
   timerInstance[x] = setTimeout(myAlert,parsedData[x],parsedData[x]); // send timer value too
