@@ -23,6 +23,7 @@ inputData.forEach(function(timeVal) {
 // no data supplied (or remaining after error checks)
 if (parsedData.length < 1) {
   console.log('No input for timers specified!\n\nUSAGE:  timer1.js x y z\nWhere x, y, z... etc can be any number of timers and seconds.\nExample: timer1.js 5 10 3');
+  return;
 }
 
 //DEBUG error checking and input routines:
