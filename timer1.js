@@ -33,8 +33,9 @@ let timerInstance = [];
 
 // display timer start
 let modifier = ' is';
-if(parsedData.length > 0) {
-  let modifer = 's are';
+console.log(parsedData.length);
+if (parsedData.length > 1) {
+  modifier = 's are';
 }
 console.log('Timer' + modifier + ' running...');
 
