@@ -1,5 +1,5 @@
-# timer
-LHL - timer challenge
+# basic timer
+######LHL - timer challenge
 
 usage is
 node timer1.js x y z...
