@@ -5,6 +5,9 @@
 // https://flex-web.compass.lighthouselabs.ca/workbooks/flex-m01w4/activities/390?journey_step=32&workbook=7
 //
 
+// GLOBAL variables
+const conColorCyan="\x1b[36m", conColorRed='\x1b[91m', conColorGreen='\x1b[92m', conColorReset="\x1b[0m";
+
 //
 // COLLECT INPUT & convert to Int.
 //
@@ -22,7 +25,7 @@ inputData.forEach(function(timeVal) {
 });
 // no data supplied (or remaining after error checks)
 if (parsedData.length < 1) {
-  console.log('No input for timers specified!\n\nUSAGE:  timer1.js x y z\nWhere x, y, z... etc can be any number of timers and seconds.\nExample: timer1.js 5 10 3');
+  console.log(`\n${conColorRed}No input for timers specified!\n\n${conColorCyan}USAGE:  timer1.js x y z\nWhere x, y, z... etc can be any number of timers and seconds.\nExample: ${conColorGreen}timer1.js 5 10 3${conColorReset}`);
   return;
 }
 
@@ -37,7 +40,7 @@ let modifier = ' is';
 if (parsedData.length > 1) {
   modifier = 's are';
 }
-console.log(parsedData.length + ' timer' + modifier + ' running...');
+console.log(conColorCyan + parsedData.length + ' timer' + modifier + ' running...'+conColorReset);
 
 for (let x = 0; x < parsedData.length; x++) {
   timerInstance[x] = setTimeout(myAlert,parsedData[x],parsedData[x]); // send timer value too
@@ -47,6 +50,6 @@ for (let x = 0; x < parsedData.length; x++) {
 // OUTPUT alerts - setTimeOut only runs once, so no need to clear timers
 //
 function myAlert(timesUp) {
-  console.log((timesUp / 1000) + ' seconds are up!\n');
+  console.log(conColorGreen + (timesUp / 1000) + ' seconds are up!\n' + conColorReset);
   process.stdout.write("\u0007"); // several ways for system BEEP - this works on MACm1
 }
