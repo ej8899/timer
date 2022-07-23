@@ -7,6 +7,7 @@
 
 // GLOBAL variables & style function(s)
 const conColorCyan="\x1b[36m", conColorRed='\x1b[91m', conColorGreen='\x1b[92m', conColorReset="\x1b[0m";
+
 function drawDivideLine(lineColor,lineLength,lineMessage) { 
   if(lineMessage) {
     lineMessage = '--[ ' + lineMessage + ' ]';
@@ -14,6 +15,8 @@ function drawDivideLine(lineColor,lineLength,lineMessage) {
   const consoleLine = '-'.repeat((process.stdout.columns)*((lineLength/100))-((lineMessage.length)));
   return (`${lineColor}${lineMessage}${consoleLine}${conColorReset}`);
 }
+
+
 
 //
 // OUTPUT alerts - setTimeOut only runs once, so no need to clear timers
@@ -27,7 +30,7 @@ function myAlert(timesUp) {
 //
 // MAIN program:
 //
-
+console.log('');
 console.log(drawDivideLine(conColorGreen,50,"LHL - Simple Timer Project"));
 
 
@@ -59,9 +62,8 @@ let modifier = ' is';
 if (parsedData.length > 1) {
   modifier = 's are';
 }
-console.log(`${conColorCyan}${parsedData.length} timer${modifier} currently running.\nUse ${conColorRed}CTRL-C${conColorCyan} to exit if needed.${conColorReset}\n`);
+console.log(`\n${conColorCyan}${parsedData.length} timer${modifier} currently running.\nUse ${conColorRed}CTRL-C${conColorCyan} to exit if needed.${conColorReset}\n`);
 
 for (let x = 0; x < parsedData.length; x++) {
-  timerInstance[x] = setTimeout(myAlert,parsedData[x],parsedData[x]); // send timer value too
+  timerInstance[x] = setTimeout(myAlert,parsedData[x],parsedData[x]); // send timer value to myAlert too 
 }
-
